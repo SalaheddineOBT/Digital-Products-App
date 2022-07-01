@@ -12,17 +12,20 @@ const routes: Routes = [
                 loadChildren: () => import('../../screens/home/home.module').then(m => m.HomePageModule)
             },
             {
-                path: 'tab2',
-                loadChildren: () => import('../../tab2/tab2.module').then(m => m.Tab2PageModule)
+                path: 'basket',
+                loadChildren: () => import('../../screens/basket/basket.module').then(m => m.BasketPageModule)
             },
             {
-                path: 'tab3',
-                loadChildren: () => import('../../tab3/tab3.module').then(m => m.Tab3PageModule)
+                path: 'favorite',
+                loadChildren: () => import('../../screens/favorite/favorite.module').then(m => m.FavoritePageModule)
             },
             {
-                path: '',
-                redirectTo: '/tabs/tab1',
-                pathMatch: 'full'
+                path: 'account',
+                loadChildren: () => import('../../screens/account/account.module').then( m => m.AccountPageModule)
+            },
+            {
+                path: 'settings',
+                loadChildren: () => import('../../screens/settings/settings.module').then(m => m.SettingsPageModule)
             }
         ]
     },

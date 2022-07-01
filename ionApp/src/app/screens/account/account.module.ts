@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { AccountPageRoutingModule } from './account-routing.module';
 
 import { AccountPage } from './account.page';
+import { ExploreContainerComponentModule } from 'src/app/explore-container/explore-container.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AccountPageRoutingModule
+    AccountPageRoutingModule,
+    ExploreContainerComponentModule
   ],
   declarations: [AccountPage]
 })
