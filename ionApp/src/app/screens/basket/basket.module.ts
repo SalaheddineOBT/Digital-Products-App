@@ -8,12 +8,15 @@ import { BasketPageRoutingModule } from './basket-routing.module';
 
 import { BasketPage } from './basket.page';
 
+import { ExploreContainerComponentModule } from 'src/app/explore-container/explore-container.module';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    BasketPageRoutingModule
+    BasketPageRoutingModule,
+    ExploreContainerComponentModule
   ],
   declarations: [BasketPage]
 })

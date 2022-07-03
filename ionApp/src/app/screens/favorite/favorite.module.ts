@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { FavoritePageRoutingModule } from './favorite-routing.module';
 
 import { FavoritePage } from './favorite.page';
+import { ExploreContainerComponentModule } from 'src/app/explore-container/explore-container.module';
 
 @NgModule({
     imports: [
         CommonModule,
         FormsModule,
         IonicModule,
-        FavoritePageRoutingModule
+        FavoritePageRoutingModule,
+        ExploreContainerComponentModule
     ],
     declarations: [FavoritePage]
 })
