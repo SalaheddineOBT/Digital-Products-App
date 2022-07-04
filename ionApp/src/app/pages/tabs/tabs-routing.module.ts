@@ -16,8 +16,8 @@ const routes: Routes = [
                 loadChildren: () => import('../../screens/basket/basket.module').then(m => m.BasketPageModule)
             },
             {
-                path: 'favorite',
-                loadChildren: () => import('../../screens/favorite/favorite.module').then(m => m.FavoritePageModule)
+                path: 'categories',
+                loadChildren: () => import('../../screens/categories/categories.module').then(m => m.CategoriesPageModule)
             },
             {
                 path: 'account',
