@@ -1,0 +1,32 @@
+<div [style.background-image]="'url(' + model?.background + ')'">
+  <ion-grid [class]="model?.centerAlign ? 'ion-text-center' : ''">
+    <ion-row>
+      <ion-col [offset]="!model?.centerAlign ? 1 : 0">
+        <ion-label *ngIf="model?.title" [color]="model?.titleColor ? model.titleColor : 'light'">
+          {{model?.title}}
+        </ion-label>
+        <p class="subtitle" *ngIf="model?.subtitle">
+          <ion-text [color]="model?.color ? model.color : 'light'">
+            {{model?.subtitle}}
+          </ion-text>
+        </p>
+        <p class="description" *ngIf="model?.description">
+          <ion-text [color]="model?.color ? model.color : 'light'">
+            {{model?.description}}
+          </ion-text>
+        </p>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="model?.button" class="ion-margin-top">
+      <ion-col [offset]="!model?.centerAlign ? 1 : 0">
+        <ion-button shape="round" [color]="model?.buttonColor ? model.buttonColor : 'primary'">
+          <ion-text 
+            [class]="model?.centerAlign ? 'ion-margin-horizontal ion-padding-horizontal' : ''">
+            {{model?.button}}
+          </ion-text>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

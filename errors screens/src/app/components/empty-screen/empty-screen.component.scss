@@ -1,0 +1,32 @@
+div {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    ion-grid {
+      transform: translateY(60vh);
+      ion-row {
+        ion-col {
+          ion-label {
+            font-size: 1.8rem;
+            font-weight: bold;
+          }
+          p {
+            font-size: 0.9rem;
+            font-weight: 400;
+          }
+          p.subtitle {
+            margin-top: 4vh !important;
+            margin-bottom: 8px !important;
+          }
+          p.description {
+            margin-top: 8px !important;
+          }
+          ion-button {
+            --box-shadow: -1px 11px 13px -6px rgb(87, 86, 86);
+          }
+        }
+      }
+    }
+  }
