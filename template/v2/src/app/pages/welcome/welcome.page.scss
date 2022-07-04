@@ -1,0 +1,39 @@
+ion-slides {
+    height: 100%;
+    ion-slide {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        align-items: initial;
+        justify-content: left;
+        ion-row {
+            ion-img {
+                height: 10vh;
+                width: 10vh;
+            }
+            ion-label, p {
+                font-size: 1.2rem;
+                font-weight: bold;
+                color: var(--ion-color-white);
+            }
+        }
+        .logoLabel {
+            margin-top: 2vh;
+        }
+        .logo {
+            margin: 10vh 0 0 5vh;
+        }
+        .authButton {
+            transform: translateY(35vh);
+            ion-button {
+                width: 70%;
+                margin: auto;
+                margin-bottom: 3vh;  
+                ion-text {
+                    font-size: 0.9em;
+                    text-transform: none;
+                }              
+            }
+        }
+    }
+}

@@ -1,0 +1,85 @@
+<ion-content [fullscreen]="true" color="light">
+
+  <ion-header 
+    class="ion-no-border" 
+    [style.background-image]="'url(' + currentImage + ')'">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-fab-button size="small" color="white" routerLink="/tabs/home">
+          <ion-icon name="chevron-back-outline" color="dark"></ion-icon>
+        </ion-fab-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-fab-button size="small" color="white">
+          <ion-icon name="heart-outline" color="dark"></ion-icon>
+        </ion-fab-button>
+      </ion-buttons>
+    </ion-toolbar>
+    <ion-label color="white">
+      {{item?.name}}
+      <p class="ion-margin-top">
+        <ion-text>₹  {{item?.price}}</ion-text>
+        <span>/person</span>
+      </p>
+    </ion-label>
+    <div class="images">
+      <ion-thumbnail *ngFor="let image of item?.images">
+        <img [src]="image" (click)="changeImage(image)" />
+      </ion-thumbnail>
+    </div>
+  </ion-header>
+
+  <ion-segment
+    mode="md" 
+    (ionChange)="segmentChanged($event)" 
+    [(ngModel)]="segmentValue" 
+    class="ion-padding-horizontal">
+    <ion-segment-button value="1">
+      <ion-label>Overview</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="2">
+      <ion-label>Reviews</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-grid *ngIf="segmentValue == '1'">
+    <ion-row>
+      <ion-col size="6">
+        <ion-item lines="none">
+          <ion-icon name="time" slot="start" color="primary"></ion-icon>
+          <ion-label>
+            <ion-text color="medium">DURATION</ion-text>
+            <p>
+              <ion-text color="dark">{{item?.duration}} hours</ion-text>
+            </p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+      <ion-col size="6">
+        <ion-item lines="none">
+          <ion-icon name="star" slot="start" color="primary"></ion-icon>
+          <ion-label>
+            <ion-text color="medium">RATING</ion-text>
+            <p>
+              <ion-text color="dark">{{item?.rating}} out of 5</ion-text>
+            </p>
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-text color="medium" class="ion-text-justify ion-padding-horizontal description">
+        {{item?.description}}
+      </ion-text>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
+
+<ion-footer class="ion-no-border ion-padding" color="light">
+  <ion-button expand="block" color="dark" size="large">
+    <ion-text>Book now</ion-text>
+    <ion-icon class="ion-padding-start" slot="end" name="arrow-forward-outline"></ion-icon>
+  </ion-button>
+</ion-footer>
