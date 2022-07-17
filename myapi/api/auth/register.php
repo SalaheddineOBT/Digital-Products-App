@@ -1,7 +1,7 @@
 <?php
 
-    include_once 'dbh.php';
-    include_once 'config/cors.php';
+    include_once '../monDbConnect/dbh.php';
+    include_once '../config/cors.php';
 
     $db=new DataBase();
 
@@ -15,7 +15,7 @@
             empty($data->password) || !isset($data->password) ||
             empty($data->username) || !isset($data->username)
         ):
-        http_response_code(400400);
+            http_response_code(400);
             $db->Message(0,400,"Pleas Fill all The Required Fields !");
 
         else:
@@ -40,10 +40,9 @@
                         $db->Message(0,400,"This Email or username Already Exist !");
                     elseif($db->Register($username,$email,$password)):
                         http_response_code(201);
-                        $db->Message(0,200,"Successfull Register .");
+                        $db->Message(1,200,"Successfull Register .");
                     endif; 
                 }catch(PDOEception $e){
-                    echo $e->getMessage();
                     http_response_code(500);
                     $db->Message(0,500,"".$e->getMessage());
                 }

@@ -35,11 +35,19 @@
             $sql='SELECT * FROM users WHERE email="'.$emlusn.'" OR username="'.$emlusn.'"';
             $stmt=$this->con->prepare($sql);
             $stmt->execute();
+            $tbl = [];
             if($stmt->rowCount()):
                 $row=$stmt->fetch(PDO::FETCH_ASSOC);
                 $checkPass = password_verify($password,$row['password']);
                 if($checkPass):
-                    return $row["id"];
+                    $tbl = array(
+                        "id" => $row["id"],
+                        "username" => $row["username"],
+                        "email" => $row["email"],
+                        "isActive" => $row["isActive"],
+                        "isDeleted" => $row["isDeleted"]
+                    );
+                    return $tbl;
                 endif;
             endif;
             return null;
