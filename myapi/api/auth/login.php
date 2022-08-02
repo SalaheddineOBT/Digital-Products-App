@@ -27,6 +27,7 @@
                 if($db->Login($emlusr,$password)):
                     $key = "Sgenius%@obt2001#";
                     $payload = array(
+                        "sub"=>"my Sybject : whom the token refers to like roles ...",
                         "iss"=>'http://localhost/mydb/',
                         "aud"=>'http://localhost/mydb/',
                         "iat"=>time(),
