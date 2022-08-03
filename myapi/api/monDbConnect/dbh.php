@@ -44,8 +44,8 @@
                         "id" => $row["id"],
                         "username" => $row["username"],
                         "email" => $row["email"],
-                        "isActive" => $row["isActive"],
-                        "isDeleted" => $row["isDeleted"]
+                        "isActive" => $row["isActive"],//active account => true or false
+                        "isDeleted" => $row["isDeleted"]//deleted account => true or false
                     );
                     return $tbl;
                 endif;
