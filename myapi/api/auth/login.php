@@ -32,7 +32,7 @@
                         "iss"=>'http://localhost/mydb/',
                         "aud"=>'http://localhost/mydb/',
                         "iat"=>time(),
-                        "nbf"=>time() + 31536000, //"indicates the time before which the JWT must not be accepted for processing."
+                        "nbf"=>time(), //"indicates the time before which the JWT must not be accepted for processing."
                         "exp"=>time() + 31536000,
                         "user_id" => $db->Login($emlusr,$password)
                     );
